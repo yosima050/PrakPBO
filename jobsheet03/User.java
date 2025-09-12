@@ -7,10 +7,19 @@ public class User {
     public String alamat;
     public String pekerjaan;
 
-    public User(String username, String nama, String email) {
+    private static User instance;
+
+    private User(String username, String nama, String email) {
         this.username = username;
         this.nama = nama;
         this.email = email;
+    }
+
+        public static User getInstance() {
+        if (instance == null) {
+            instance = new User("admin", "Administrator", "admin@web.com");
+        }
+        return instance;
     }
 
     public void cetakInfo() {
