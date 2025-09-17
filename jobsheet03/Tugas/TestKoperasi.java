@@ -22,5 +22,18 @@ public class TestKoperasi {
         System.out.println("\nMembayar angsuran 3.000.000");
         anggota1.angsur(3000000);
         System.out.println("Jumlah pinjaman saat ini: " + anggota1.getJumlahPinjaman());
+
+        System.out.println("\n--- Pengujian Aturan Angsuran 10% ---");
+        System.out.println("\nMeminjam uang 1.000.000...");
+        anggota1.pinjam(1000000);
+        System.out.println("Jumlah pinjaman saat ini: " + anggota1.getJumlahPinjaman());
+
+        System.out.println("\nMembayar angsuran 50.000 (kurang dari 10%)...");
+        anggota1.angsur(50000);
+        System.out.println("Jumlah pinjaman saat ini: " + anggota1.getJumlahPinjaman());
+
+        System.out.println("\nMembayar angsuran 100.000 (tepat 10%)...");
+        anggota1.angsur(100000);
+        System.out.println("Jumlah pinjaman saat ini: " + anggota1.getJumlahPinjaman());
     }
 }
